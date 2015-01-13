@@ -65,9 +65,9 @@ SESSION_COOKIE_AGE = 86400
 # cookies expires after the browser close
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
-ROOT_URLCONF = 'wanna_eat.urls'
+ROOT_URLCONF = 'Car_Shop.urls'
 
-WSGI_APPLICATION = 'wanna_eat.wsgi.application'
+WSGI_APPLICATION = 'Car_Shop.wsgi.application'
 
 
 # Database
