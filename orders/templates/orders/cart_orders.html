@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block styles %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/carlist-pop-up.css' %}" />
+
+{% endblock %}
+
+{% block content %}
+<div class="page-header">
+        <h1>Заказы: </h1>
+    </div>
+<div class="row">
+        <div class="col-xs-10">
+              {% for key, val in orders %}
+            <div class="panel panel-success"  style="border-color:#eeeeee">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-10">
+                            <h3 class="panel-title" >Заказ в "{{ key.name }}". Сумма заказа: {{ val }} р.</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                     <div class="row">
+                        <div class="col-xs-2">
+                            <a class="btn btn-primary" id="order{{ key.id }}" onclick="viewOrderList({{ key.id }})" style="width:100%;">Подробнее</a>
+                        </div>
+                        <div class="col-xs-8"></div>
+                        <div class="col-xs-2 ">
+                            <a class="btn btn-success" href="{% url 'get_form' eC_id=key.id order_type=0 %}" style="width:100%;">Оформить</a>
+                        </div>
+                     </div>
+                    <p></p>
+                </div>
+            </div>
+            <div class="alert alert-info" id="popup{{ key.id }}">
+                    <span id="order_rows{{ key.id }}"></span>
+                <div class="row">
+                    <div class="col-xs-2 ">
+                        <button type="button" class="btn btn-primary" onclick="hidePopUp()" style="width:100%;">Закрыть</button>
+                    </div>
+                </div>
+             </div>
+            {% endfor %}
+        </div>
+</div>
+
+
+{% endblock %}
+
+{% block scripts %}
+
+    <script type="text/javascript">
+        function viewOrderList(autosaloon_id) {
+            $.get("{% url 'cart_orders_autosaloon_car_list' %}", {"id": autosaloon_id}, function(data) {
+                if (data != "error") {
+                    var car_list = jQuery.parseJSON(data);
+                    var order_rows = [];
+                    for (var i = 0; i < car_list.length; i++) {
+                        order_rows[i] = car_list[i].car_name + ": " + car_list[i].car_count + "x    " + car_list[i].car_price + " р.";
+                    }
+                    showPopUp(autosaloon_id, order_rows);
+                } else {
+
+                }
+            });
+        }
+
+        $(document).ready(function() {
+            hidePopUp();
+        })
+
+        function showPopUp(autosaloon_id, order_rows) {
+            hidePopUp();
+            var row_id = "#order_rows" + autosaloon_id;
+            $(row_id).html("");
+            var out_str = "";
+            for (var i = 0; i < order_rows.length; i++) {
+                out_str += "<p>" + order_rows[i] + "</p>";
+            }
+            $(row_id).html(out_str);
+            var popup_id = "#popup" + autosaloon_id;
+            $(popup_id).show();
+        }
+
+        function hidePopUp() {
+            $(".alert").hide();
+        }
+
+        $(document).keydown(function(eventObject) {
+            if (eventObject.which == 27) { // нажата клавиша Esc
+                hidePopUp();
+            }
+        })
+    </script>
+
+{% endblock %}

@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2b439c14-152b-476f-9c25-b176c6622b42}</ProjectGuid>
+    <ArchitectureToolsVersion>2.0.0.0</ArchitectureToolsVersion>
+    <Name>WannaEatDocs</Name>
+    <RootNamespace>WannaEatDocs</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
+  <ItemGroup>
+    <Content Include="Classes\AnalysisClasses.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Classes\AnalysisClasses.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Classes\AnalysisClasses.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="Classes\Description\Описание классов анализа.docx">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Classes\Description\Описание проектных классов.docx">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Classes\ProjectClasses.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Classes\ProjectClasses.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Classes\ProjectClasses.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="ModelDefinition\Package1_1920.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package1_2141.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package2_2141.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package3_2141.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1919.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1920.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1921.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1923.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_2141.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Packages\Description\Описание диаграммы пакетов.docx">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Packages\Packages.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Packages\Packages.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Packages\Packages.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="Sequences\Description\Описание диаграмм последовательностей.docx">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Sequences\Dishes.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Sequences\Dishes.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Sequences\Dishes.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Sequences\Employees.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Sequences\Employees.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Sequences\Employees.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Sequences\Establishments.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Sequences\Establishments.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Sequences\Establishments.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Sequences\Orders.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Sequences\Orders.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Sequences\Orders.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="States\Description\Описание диаграммы состояний.docx">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UseCases.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UseCases.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UseCases.usecasediagram</DependentUpon>
+    </Content>
+    <Content Include="UseCases\Detalization\Детализация вариантов использования.docx">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UseCases\UseCases.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UseCases\UseCases.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>UseCases\UseCases.usecasediagram</DependentUpon>
+    </Content>
+    <Folder Include="Classes\Description" />
+    <Folder Include="ModelDefinition\" />
+    <Content Include="ModelDefinition\WannaEatDocs.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Folder Include="Packages\Description" />
+    <Folder Include="Sequences\Description" />
+    <Folder Include="States\Description" />
+    <Folder Include="UseCases" />
+    <Folder Include="Classes" />
+    <Folder Include="Packages" />
+    <Folder Include="UseCases\Detalization" />
+    <Folder Include="States" />
+    <Folder Include="Sequences" />
+  </ItemGroup>
+</Project>

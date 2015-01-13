@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+        <div class="row row-offcanvas row-offcanvas-right">
+
+        <div class="col-xs-12 col-sm-9">
+          <p class="pull-right visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+          </p>
+          <div class="jumbotron">
+            <h1>{{ current_autosaloon.name }}</h1>
+            <p>Добавляйте в корзину заказа понравившиеся Вам блюда или просто закажите столик</p>
+          </div>
+            <div class="container">
+          <div class="col-xs-6"></div>
+                 <div class="col-xs-3">
+            <a href="{% url 'cart' cart_state=1 %}">
+                <img src="{% static 'images/cart/basket.png' %}" class="btn btn-default" role="button" title="Корзина"></a>
+                <a href="{% url 'cart' cart_state=1 %}" title="Корзина"> Корзина: </a>
+
+              <b id="cart_value">0 р.</b></div></div>
+
+          <div class="row">
+              {% for car in cares_list %}
+            <div class="col-xs-6 col-lg-4">
+              <h3>{{ car.name }}</h3>
+              <img src="{% static 'images/'|add:car.car_image.name %}" class="img-thumbnail">
+              <p>{{ car.composition }}</p>
+                <p>Вес порции: {{ car.weight }} гр.</p>
+                <p>Цена: {{ car.price }} р.</p>
+                <p><a class="btn btn-default" href="{% url 'car_about' car_id=car.id %}"  role="button">Подробнее</a>
+                    <a >
+                        <img src="{% static 'images/cart/add_to_basket.png' %}" class="btn btn-default" onClick="addCar({{ car.id }}, {{ car.price }})" role="button" title="Добавить в корзину">
+                    </a>
+                </p>
+            </div><!--/.col-xs-6.col-lg-4-->
+              {% endfor %}
+          </div><!--/row-->
+        </div><!--/.col-xs-12.col-sm-9-->
+
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+          <div class="list-group">
+              <a href="{% url 'cares_with_category' autosaloon_id=current_autosaloon.id car_category=100 %}"
+                      class="list-group-item {% if default_car_category == '100' %} active {% endif %}">
+                  Все
+              </a>
+              {% for category, name in car_categories_list %}
+                <a href="{% url 'cares_with_category' autosaloon_id=current_autosaloon.id car_category=category %}"
+                        class="list-group-item {% if category == default_car_category %} active {% endif %}">
+                    {{ name }}
+                </a>
+              {% endfor %}
+          </div>
+        </div><!--/.sidebar-offcanvas-->
+      </div><!--/row-->
+
+{% endblock %}
+
+{% block scripts %}
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $.get("{% url 'cart_loading' %}", function(data) {
+                var cart_value = Number(data);
+                var cart_value_str = String(cart_value) + " р.";
+                $("#cart_value").text(cart_value_str);
+            });
+        })
+
+        function addCar(car_id, car_price) {
+            $.get("{% url 'cart_updating' %}", {"id" : car_id}, function(data) {
+               updateCart(car_id, car_price);
+            });
+        }
+
+        function updateCart(car_id, car_price) {
+            var cart_price = Number($('#cart_value').text().split(" ")[0]);
+            var new_cart_price = cart_price + car_price;
+            $('#cart_value').text(new_cart_price + " р.");
+        }
+    </script>
+
+{% endblock %}

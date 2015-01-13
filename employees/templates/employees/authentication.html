@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+{% if forms.errors %}
+    <p class="error">Sorry, that's not a valid username or password</p>
+{% endif %}
+
+<div class="container">
+    <div class="row"> <h2 class="form-signin-heading col-md-8">Пожалуйста, авторизуйтесь</h2></div>
+ <div class="row">
+    <div class="col-xs-4">
+        {% if state == 1 %}
+        <div class="alert alert-danger">Неверный логин/пароль</div>
+        {% endif %}
+        <form action="{% url 'after_login' %}" method="post">
+            {% csrf_token %}
+        <p><input type="text" placeholder="Логин" name="username" id="username" required autofocus></p>
+        <p><input type="password" placeholder="Пароль" name="password"  id="password" required></p>
+
+
+
+        <p><button class="btn btn-default" type="submit">Войти</button></p>
+        </form>
+    </div></div>
+</div>
+
+{% endblock %}

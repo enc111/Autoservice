@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="row">
+     <div class="col-xs-4">
+    <div class="alert alert-danger">
+        <strong>Oh snap!</strong> {{user_name}}Вы были забанены. Обратитесь к администратору.
+      </div>
+        <a class="btn btn-default" href="{% url 'home' %}">На главную</a>
+         </div>
+</div>
+
+{% endblock %}

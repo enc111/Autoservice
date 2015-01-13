@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="02df5724-a662-4183-91fa-0f5c421d0d31"
+  name="Пользовательский интерфейс" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <suppliersInternal>
+    <dependency
+      Id="02b5148d-a7e1-4945-997b-d29ccd19c740">
+      <packageMoniker
+        Id="b6427127-2786-4825-a255-77f759ba248f"
+        LastKnownName="Модели"
+        LastKnownLocation="Package_1921.uml" />
+    </dependency>
+  </suppliersInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="a8724b9e-1750-45c8-a1c0-d247b6035727"
+        LastKnownName="Templates"
+        LastKnownLocation="Package_1920.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="80a663f7-f967-42cd-a21d-f6059d2fae55"
+        LastKnownName="Static"
+        LastKnownLocation="Package1_1920.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+  dslVersion="1.0.0.0"
+  Id="b6427127-2786-4825-a255-77f759ba248f"
+  name="Модели" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <suppliersInternal>
+    <dependency
+      Id="3cda7c81-4633-44a6-97f8-4e90ed75eb87">
+      <packageMoniker
+        Id="ef0ab91e-ccb8-4b07-b852-43388b0964fd"
+        LastKnownName="SQlite3 database"
+        LastKnownLocation="Package_1923.uml" />
+    </dependency>
+  </suppliersInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="4d5c1d1e-385a-44bf-bac7-5754d4e962f8"
+        LastKnownName="Заведения"
+        LastKnownLocation="Package3_2141.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="2f80b865-35b9-4840-8702-f64dfe7ad685"
+        LastKnownName="Заказы"
+        LastKnownLocation="Package1_2141.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="c0d4a6d7-789a-4d54-a55b-d6f8ac0be18a"
+        LastKnownName="Блюда"
+        LastKnownLocation="Package2_2141.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="bb2741df-7e80-473d-99bf-ce1a0daa4b27"
+        LastKnownName="УправлениеЗаведений"
+        LastKnownLocation="Package_2141.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

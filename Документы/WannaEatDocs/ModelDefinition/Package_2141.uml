@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="bb2741df-7e80-473d-99bf-ce1a0daa4b27"
+  name="УправлениеЗаведений" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <suppliersInternal>
+    <dependency
+      Id="75bbb14f-4890-405a-8fb4-885e2da82fe9">
+      <packageMoniker
+        Id="4d5c1d1e-385a-44bf-bac7-5754d4e962f8"
+        LastKnownName="Заведения"
+        LastKnownLocation="Package3_2141.uml" />
+    </dependency>
+    <dependency
+      Id="8274132d-0972-42ea-993e-5924670af118">
+      <packageMoniker
+        Id="2f80b865-35b9-4840-8702-f64dfe7ad685"
+        LastKnownName="Заказы"
+        LastKnownLocation="Package1_2141.uml" />
+    </dependency>
+  </suppliersInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="46334bf5-e3a2-4046-b1ab-0c000f1ecbaf"
+        name="СотрудникЗаведения"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="87ae3695-5b57-4747-9f5f-15654ac65500"
+        name="User"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>
