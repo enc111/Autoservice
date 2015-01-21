@@ -1,16 +1,13 @@
-
 {% extends "main.html" %}
 {% load staticfiles %}
 {% block car_all %}
 <div>
 {% for car in form %}
 <div class="col col_14 product_gallery">
-            	<a href="/cars/get/{{ car.id }}/"><img src="{{ MEDIA_URL }}{{ car.car_img.name }}" height="150" width="200" alt="Product 01" /></a>
+                <a href="/cars/get/{{ car.id }}/"><img src="{{ MEDIA_URL }}{{ car.car_img.name }}" height="150" width="200" alt="Product 01" width="100" height="100" /></a>
                 <h3><a href="/cars/get/{{ car.id }}/">{{ car.mark }}</a></h3>
                 <p class="product_price">{{car.price}}</p>
-                <form action="/add/to/cart/car_slug/" method="post">
                 <a href="shoppingcart.html" class="add_to_cart">Add to Cart</a>
-                </form>
             </div>
 {% endfor %}
 </div>

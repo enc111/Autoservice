@@ -11,6 +11,7 @@ urlpatterns = patterns('',
 
                        url(r'^admin/', include(admin.site.urls)),
                        url(r'^cars/', include('Car.urls')),
-                       url(r'^order/', include('order.urls')),
                        url(r'^auth/', include('logsys.urls')),
-                       url(r'^$', include('Car.urls'))) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+                       url(r'^$', include('Car.urls')),
+                       #url(r'^cart/', include('cart.urls'))
+                        ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

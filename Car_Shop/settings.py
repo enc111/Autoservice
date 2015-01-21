@@ -39,8 +39,8 @@ INSTALLED_APPS = (
     'Car',
     'logsys',
     'checkup',
-    'order',
-    'testdrive'
+    'testdrive',
+    'cart'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -64,7 +64,7 @@ WSGI_APPLICATION = 'Car_shop.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'our1n8_db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'our1n8_db_sqlite3.sqlite3'),
     }
 }
 

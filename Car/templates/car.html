@@ -33,8 +33,10 @@
                     <tr><td height="30">Количество</td><td><input type="text" value="1" style="width: 20px; text-align: right" /></td></tr>
                 </table>
                 <div class="cleaner h20"></div>
+                <form action="/add/to/cart/car_slug/" method="post">
                 <a  class="add_to_cart" onClick="addDish({{ car.id }}, {{ car.price }})">Добавить в корзину</a>
                 <img src="" class="btn btn-default" onClick="addDish({{ car.id }}, {{ car.price }})" role="button" title="Добавить в корзину">
+                </form>
 			</div>
             <div class="cleaner h30"></div>
 
