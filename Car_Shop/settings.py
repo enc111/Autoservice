@@ -1,5 +1,5 @@
 """
-Django settings for wanna_eat project.
+Django settings for Car_shop project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.7/topics/settings/
@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ')uw%j+u@%lxpt5jg%0i@5bdf52tknup(80h63a39#6^vreznl%'
+SECRET_KEY = 'g#hfq4ni(!c8ooyu=kz#zy9a)!2yc@2)bma#wl81pyeb__0kk#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -25,7 +25,6 @@ DEBUG = True
 TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 
 # Application definition
@@ -37,10 +36,11 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'autosaloons',
-    'cars',
-    'orders',
-    'employees',
+    'Car',
+    'logsys',
+    'checkup',
+    'order',
+    'testdrive'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -53,21 +53,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-# set the session store type: cookies
-SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'
+ROOT_URLCONF = 'Car_shop.urls'
 
-# allow access to session from JavaScript
-SESSION_COOKIE_HTTPONLY = False
-
-# set cookie age
-SESSION_COOKIE_AGE = 86400
-
-# cookies expires after the browser close
-SESSION_EXPIRE_AT_BROWSER_CLOSE = True
-
-ROOT_URLCONF = 'Car_Shop.urls'
-
-WSGI_APPLICATION = 'Car_Shop.wsgi.application'
+WSGI_APPLICATION = 'Car_shop.wsgi.application'
 
 
 # Database
@@ -76,14 +64,14 @@ WSGI_APPLICATION = 'Car_Shop.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'our1n8_db.sqlite3'),
     }
 }
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru_RU'
 
 TIME_ZONE = 'UTC'
 
@@ -98,17 +86,22 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR,  'static'),
 )
-
 TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR, 'templates'),
+    os.path.join(BASE_DIR,  'templates'),
 )
+MEDIA_ROOT = os.path.join(BASE_DIR,  'media')
 
-MEDIA_ROOT = (
-    os.path.join(BASE_DIR, 'static/images')
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "django.contrib.auth.context_processors.auth",
+    "django.core.context_processors.debug",
+    "django.core.context_processors.i18n",
+    "django.core.context_processors.media",
+    "django.core.context_processors.static",
+    "django.core.context_processors.tz",
+    "django.contrib.messages.context_processors.messages"
 )
-
-MEDIA_URL = '/static/images/'

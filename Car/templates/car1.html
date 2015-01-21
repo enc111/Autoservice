@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<img src="{{  car.car_img.name }}" width="185" height="185" alt="" class="leftimg">
+    <h5>Марка:{{ car.mark.name }}</h5>
+    <h5>Цена:{{ car.price }}</h5>
+    <h5>Цвет:{{ car.color }}</h5>
+    <h5>Модель:{{ car.model.name }}</h5>
+    <h5>Дилер:{{ car.dealer.address }}</h5>
+    <h5>Комплектация:{{ car.complectation }}</h5>
+    <h5>Описание:</h5>{{ car.description }}
+    <hr>
+    <h3>Комментарии:</h3>
+    {% for n in comments %}
+    <p>{{ n.comments_user }}:{{ n.ctext }} </p>
+    {% endfor %}
+    <form action="/cars/add_comments/{{ car.id }}/" method="post">
+    {% csrf_token %}
+        {{ form }}
+
+    <input type="submit" class="button" value="Добавить">
+
+    </form>
+
+
+<h2>Информация о машине</h2>
+            <div class="col col_13">
+        	<a  rel="lightbox[portfolio]" href="images/product/10_l.jpg" title="Lady Shoes"><img src="{{  car.car_img.name }}" alt="Image 10" /></a>
+            </div>
+            <div class="col col_13 no_margin_right">
+                <table>
+                    <tr>
+                        <td height="30" width="160">Марка:</td>
+                        <td>{{ car.mark.name }}</td>
+                    </tr>
+                    <tr>
+                        <td height="30">Модель:</td>
+                        <td>{{ car.model.name }}</td>
+                    </tr>
+                    <tr>
+                        <td height="30">Цвет:</td>
+                        <td>{{ car.color }}</td>
+                    </tr>
+                    <tr>
+                        <td height="30">Дилер:</td>
+                        <td>{{ car.dealer.address }}</td>
+                    </tr>
+                    <tr>
+                        <td height="30">Комплектация:</td>
+                        <td>{{ car.complectation }}</td>
+                    </tr>
+                    <tr>
+                        <td height="30">Цена:</td>
+                        <td>{{ car.price }}</td>
+                    </tr>
+                    <tr><td height="30">Quantity</td><td><input type="text" value="1" style="width: 20px; text-align: right" /></td></tr>
+                </table>
+                <div class="cleaner h20"></div>
+                <a href="shoppingcart.html" class="add_to_cart">Add to Cart</a>
+			</div>
+            <div class="cleaner h30"></div>
+
+            <h5><strong>Описание:</strong></h5>
+            <p>{{ car.description }}</p>
+
+
+
+
+</body>
+</html>

@@ -1,25 +1,16 @@
+from django.conf import settings
 from django.conf.urls import patterns, include, url
+from django.conf.urls.static import static
 from django.contrib import admin
-from django.views.generic import RedirectView
 
-urlpatterns = patterns(
-    '',
+admin.autodiscover()
+urlpatterns = patterns('',
+                       # Examples:
+                       # url(r'^$', 'Car_shop.views.home', name='home'),
+                       # url(r'^blog/', include('blog.urls')),
 
-    # редирект с корня сайта на страницу выбора заведения для города
-    url(r'^$', RedirectView.as_view(url=r'city/'), name="home_page"),
-
-    # редирект на файл urls в приложении autosaloons
-    url(r'^city/', include('autosaloons.urls')),
-
-    # редирект на файл urls в приложении autosaloons
-    url(r'^autosaloon/', include('cars.urls')),
-
-    # редирект на файл urls в приложении orders
-    url(r'^order/', include('orders.urls')),
-
-    # страница пользователя организации
-    url(r'^employee/', include('employees.urls')),
-
-    # админка сайта
-    url(r'^admin/', include(admin.site.urls)),
-)
+                       url(r'^admin/', include(admin.site.urls)),
+                       url(r'^cars/', include('Car.urls')),
+                       url(r'^order/', include('order.urls')),
+                       url(r'^auth/', include('logsys.urls')),
+                       url(r'^$', include('Car.urls'))) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
